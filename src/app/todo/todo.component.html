@@ -1,0 +1,36 @@
+<div class="todo-container">
+  <form [formGroup]="todoForm">
+    <div class="input-row" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="space-between center">
+      <mat-form-field>
+        <input matInput placeholder="Description" formControlName="description">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Owner" formControlName="owner">
+      </mat-form-field>
+      <mat-checkbox formControlName="complete">Complete</mat-checkbox>
+    </div>
+    <div class="add-row" fxLayout="row" fxLayoutAlign="end center">
+      <button mat-raised-button color="primary" (click)="addTodo()">Add</button>
+    </div>
+  </form>
+
+  <mat-card *ngFor="let todo of todos$ | async">
+    <mat-card-title>{{todo.description}}</mat-card-title>
+    <mat-card-content fxLayout="row" fxLayoutAlign="space-between center">
+      <span class="owner">{{todo.owner}}</span>
+      <span class="complete">{{todo.complete ? 'Done' : 'Get On It'}}</span>
+    </mat-card-content>
+    <mat-card-footer fxLayout="row" fxLayoutAlign="start center">
+      <button mat-fab color="primary" (click)="toggleComplete(todo)">{{todo.complete ? 'Undo' : 'Finish'}}</button>
+      <button mat-fab color="accent" (click)="edit(todo)">Edit</button>
+      <button mat-fab color="warn" (click)="removeTodo(todo)">Delete</button>
+    </mat-card-footer>
+  </mat-card>
+
+
+
+  <div class="master-controls">
+    <button (click)="markAllAsComplete()">Mark All As Complete</button>
+  </div>
+</div>
+

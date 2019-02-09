@@ -1,0 +1,14 @@
+<form [formGroup]="editForm">
+    <div class="input-row" fxLayout="column" fxLayoutGap="10px" fxLayoutAlign="start center">
+      <mat-form-field>
+        <input matInput placeholder="Description" formControlName="description">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Owner" formControlName="owner">
+      </mat-form-field>
+    </div>
+    <div class="add-row" fxLayout="row" fxLayoutAlign="end center">
+      <button mat-raised-button color="primary" (click)="submitEdit()">Submit</button>
+      <button mat-raised-button color="accent" (click)="cancel()">Cancel</button>
+    </div>
+  </form>

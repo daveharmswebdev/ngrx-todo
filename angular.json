@@ -135,5 +135,8 @@
       }
     }
   },
-  "defaultProject": "enity-sandbox"
+  "defaultProject": "enity-sandbox",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }

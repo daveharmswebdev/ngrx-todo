@@ -1,0 +1,26 @@
+.todo-container {
+  background-color: whitesmoke;
+  padding: 1rem;
+  form {
+    padding: 2rem;
+    .input-row,
+    .add-row {
+      height: 3rem;
+    }
+  }
+  mat-card {
+    margin-bottom: 1rem;
+    padding: 1rem 3rem;
+    mat-card-content {
+      font-size: 150%;
+      color: navy;
+    }
+    mat-card-footer {
+      padding: 1rem;
+      button {
+        margin-right: 1rem;
+      }
+    }
+  }
+}
+
